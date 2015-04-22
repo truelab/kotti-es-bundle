@@ -1,0 +1,13 @@
+language: php
+
+php:
+    - 5.5
+
+env:
+    - SYMFONY_VERSION=2.6.*
+
+before_script:
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar install
+
+script: php composer.phar test

@@ -1,0 +1,30 @@
+{
+    "name": "truelab/kotti-es-bundle",
+    "description": "A symfony2 bundle that provides simple elastic search integration for kotti-model [@see https://github.com/truelab/kotti-model-bundle].",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ruben Barilani",
+            "email": "ruben.barilani.dev@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4": {"Truelab\\KottiEsBundle\\" : "./"}
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "truelab/kotti-model-bundle": "~0.1",
+        "ruflin/elastica": "dev-master",
+        "white-october/pagerfanta-bundle": "~1.0"
+    },
+    "require-dev": {
+        "symfony/symfony": "2.6.*",
+        "phpunit/phpunit": "4.4"
+    },
+    "scripts" : {
+        "test" : "php Tests/fixtures/app/console cache:clear --env=test; vendor/bin/phpunit"
+    },
+    "repositories" : [
+        { "type":"git", "url":"https://github.com/truelab/kotti-model-bundle.git" }
+    ]
+}
