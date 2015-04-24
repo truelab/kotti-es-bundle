@@ -8,6 +8,7 @@ use Truelab\KottiModelBundle\Model\ContentInterface;
 use Truelab\KottiEsBundle\Result\HybridResultSet;
 use Truelab\KottiEsBundle\Exception\ContentNotFoundException;
 use Truelab\KottiEsBundle\Exception\AliasNotFoundException;
+use Truelab\KottiEsBundle\Result\HybridResult;
 
 /**
  * Class ElasticaToKottiModelTransformer
@@ -31,10 +32,10 @@ class ElasticaToKottiModelTransformer implements ElasticaToModelTransformerInter
      */
     public function hybridTransform(ResultSet $resultSet)
     {
-        $transformedResults = [];
+        $hybridResults = [];
 
         if($resultSet === null) {
-            return new HybridResultSet(null, $transformedResults);
+            return new HybridResultSet(null, $hybridResults);
         }
 
         foreach($resultSet->getResults() as $result) {
@@ -60,10 +61,10 @@ class ElasticaToKottiModelTransformer implements ElasticaToModelTransformerInter
                 continue;
             }
 
-            $transformedResults[] = $transformed;
+            $hybridResults[] = new HybridResult($result, $transformed);
         }
 
-        return new HybridResultSet($resultSet, $transformedResults);
+        return new HybridResultSet($resultSet, $hybridResults);
     }
 
     protected function getAlias($type)

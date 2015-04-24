@@ -6,15 +6,15 @@ namespace Truelab\KottiEsBundle\Result;
  * interface HybridResultInterface
  * @package Truelab\KottiEsBundle\Result
  */
-interface HybridResultSetInterface
+interface HybridResultInterface
 {
     /**
      * @return \Elastica\ResultSet
      */
-    public function getResultSet();
+    public function getResult();
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function getHybridResults();
+    public function getTransformed();
 }

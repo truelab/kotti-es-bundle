@@ -11,18 +11,18 @@ use Elastica\ResultSet;
  */
 class HybridResultSet implements HybridResultSetInterface
 {
-    private $transformedResults;
+    private $hybridResults;
 
     private $resultSet;
 
     /**
      * @param ResultSet $resultSet
-     * @param array $transformedResults
+     * @param HybridResult[] hybridResults
      */
-    public function __construct(ResultSet $resultSet, array $transformedResults)
+    public function __construct(ResultSet $resultSet, array $hybridResults)
     {
         $this->resultSet = $resultSet;
-        $this->transformedResults = $transformedResults;
+        $this->hybridResults = $hybridResults;
     }
 
     /**
@@ -36,8 +36,8 @@ class HybridResultSet implements HybridResultSetInterface
     /**
      * @return array
      */
-    public function getTransformedResults()
+    public function getHybridResults()
     {
-        return $this->transformedResults;
+        return $this->hybridResults;
     }
 }
