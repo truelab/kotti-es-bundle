@@ -31,7 +31,7 @@ class SearcherTest extends WebTestCase
 
     public function testCount()
     {
-        $count = $this->searcher->count('Pip');
+        $count = $this->searcher->count('Lorem');
         $this->assertGreaterThan(0, $count);
 
         $count = $this->searcher->count('AAA');

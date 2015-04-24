@@ -27,6 +27,7 @@ class TruelabKottiEsExtension extends Extension
         $container->setParameter('truelab_kotti_es.host', $config['host']);
         $container->setParameter('truelab_kotti_es.port', $config['port']);
         $container->setParameter('truelab_kotti_es.index', $config['index']);
+        $container->setParameter('truelab_kotti_es.alias_map', $config['alias_map']);
 
         $loader->load('services.xml');
     }
