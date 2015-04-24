@@ -5,8 +5,6 @@ A symfony2 bundle that provides simple elastic search integration for kotti-mode
 
 ***This bundle is currently under development, the API must not be considered stable.***
 
-[![Build Status](https://api.travis-ci.org/truelab/kotti-es-bundle.svg)](https://travis-ci.org/truelab/kotti-es-bundle)
-
 
 ## Install
 
@@ -16,7 +14,7 @@ Add this to yours ```composer.json```.
 {   // ...
     "require": {
         // ...
-        "truelab/kotti-es-bundle": "~0.1",
+        "truelab/kotti-es-bundle": "dev-master",
         // ...
     },
     // ...
