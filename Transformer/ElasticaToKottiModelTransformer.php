@@ -33,7 +33,7 @@ class ElasticaToKottiModelTransformer implements ElasticaToModelTransformerInter
     {
         $transformedResults = [];
 
-        foreach($resultSet as $result) {
+        foreach($resultSet->getResults() as $result) {
 
             try{
                 $alias = $this->getAlias($result->getType());
