@@ -33,13 +33,17 @@ class ElasticaToKottiModelTransformer implements ElasticaToModelTransformerInter
     {
         $transformedResults = [];
 
+        if($resultSet === null) {
+            return new HybridResultSet(null, $transformedResults);
+        }
+
         foreach($resultSet->getResults() as $result) {
 
             try{
                 $alias = $this->getAlias($result->getType());
 
             }catch (AliasNotFoundException $e) {
-                $this->logger->error($e);
+                $this->logger->error($e->getMessage());
                 continue;
             }
 
@@ -52,7 +56,7 @@ class ElasticaToKottiModelTransformer implements ElasticaToModelTransformerInter
                 }
 
             }catch(\Exception $e) {
-                $this->logger->error($e);
+                $this->logger->error($e->getMessage());
                 continue;
             }
 

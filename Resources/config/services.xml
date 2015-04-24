@@ -33,6 +33,8 @@
         <service id="truelab_kotti_es.finder" class="Truelab\KottiEsBundle\Finder\Finder">
             <argument type="service" id="truelab_kotti_es.searcher" />
             <argument type="service" id="truelab_kotti_es.elastica_to_kotti_model" />
+            <argument type="service" id="logger" />
+            <tag name="monolog.logger" channel="kotti.es" />
         </service>
 
     </services>
