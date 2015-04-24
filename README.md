@@ -40,7 +40,7 @@ class AppKernel extends Kernel
             // REQUIRED dependent bundles
             new Truelab\KottiModelBundle\TruelabKottiModelBundle(), // model layer
             
-            new Truelab\KottiFrontendBundle\TruelabKottiEsBundle(),
+            new Truelab\KottiEsBundle\TruelabKottiEsBundle(),
             
             // ...
         );
