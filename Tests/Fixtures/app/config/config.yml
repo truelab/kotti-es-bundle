@@ -19,9 +19,18 @@ doctrine:
         driver:   "%database_driver%"
         path:     "%database_path%"
         charset:  UTF8
+# Monolog
+monolog: ~
 
 # Kotti model
 truelab_kotti_model: ~
 
 # Kotti es
-truelab_kotti_es: ~
+truelab_kotti_es:
+    host: localhost
+    port: 9200
+    index: mip_project
+
+
+
+

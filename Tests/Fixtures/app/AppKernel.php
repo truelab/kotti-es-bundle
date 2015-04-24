@@ -7,6 +7,7 @@ class AppKernel extends Kernel {
 	public function registerBundles() {
 		return array(
 			new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
 			new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
 			new Truelab\KottiModelBundle\TruelabKottiModelBundle(),
 			new Truelab\KottiEsBundle\TruelabKottiEsBundle(),

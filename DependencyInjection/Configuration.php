@@ -20,6 +20,20 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('truelab_kotti_es');
 
+        $rootNode
+            ->children()
+                ->scalarNode('host')
+                    ->defaultValue('localhost')
+                ->end()
+                ->scalarNode('port')
+                    ->defaultValue('9200')
+                ->end()
+                ->scalarNode('index')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+            ->end();
+
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.

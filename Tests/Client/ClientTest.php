@@ -17,8 +17,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $error_callback_called = false;
 
         $client = new Client([
-            'host' => 'localhost',
-            'port' => '1200' // wrong
+        'host' => 'localhost',
+        'port' => '1200' // wrong
         ], function (/* $connection, $exception, $client */) use (&$error_callback_called) {
             $error_callback_called = true;
         });

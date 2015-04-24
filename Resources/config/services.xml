@@ -4,5 +4,23 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
+    <services>
 
+        <service id="truelab_kotti_es.search.search_factory" class="Truelab\KottiEsBundle\Search\SearchFactory">
+            <argument type="service" id="logger" />
+            <tag name="monolog.logger" channel="kotti.es" />
+        </service>
+
+        <service id="truelab_kotti_es.search"  class="Truelab\KottiEsBundle\Search\SearchFactory">
+            <factory service="truelab_kotti_es.search.search_factory" method="create" />
+            <argument>%truelab_kotti_es.host%</argument>
+            <argument>%truelab_kotti_es.port%</argument>
+            <argument>%truelab_kotti_es.index%</argument>
+        </service>
+
+        <service id="truelab_kotti_es.searcher" class="Truelab\KottiEsBundle\Search\Searcher">
+            <argument type="service" id="truelab_kotti_es.search" />
+        </service>
+
+    </services>
 </container>
