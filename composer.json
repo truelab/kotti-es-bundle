@@ -15,7 +15,7 @@
         "php": ">=5.4.0",
         "truelab/kotti-model-bundle": "~0.1",
         "symfony/monolog-bundle": "~2.4",
-        "ruflin/elastica": "dev-master",
+        "ruflin/elastica": "~1.4",
         "white-october/pagerfanta-bundle": "~1.0"
     },
     "require-dev": {
