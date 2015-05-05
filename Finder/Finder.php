@@ -37,6 +37,8 @@ class Finder
     {
         try{
 
+            $this->logQuery('debug', $query);
+
             $resultSet = $this->searcher->search($query, $options);
 
         }catch (\Exception $e) {
@@ -55,10 +57,34 @@ class Finder
     public function count($query = '')
     {
         try {
+
+            $this->logQuery('debug', $query);
+
             return $this->searcher->count($query);
+
         }catch (\Exception $e) {
+
             $this->logger->critical($e);
             return 0;
         }
+    }
+
+    /**
+     * @param string $method - logger method name
+     * @param string $query  - query
+     * @return void
+     */
+    protected function logQuery($method, $query)
+    {
+
+        if(is_string($query)) {
+            $message = $query;
+        }elseif(method_exists($query, 'toArray')) {
+            $message = json_encode($query->toArray());
+        }else{
+            $message = 'can\'t log es query';
+        }
+
+        $this->logger->{$method}($message);
     }
 }
