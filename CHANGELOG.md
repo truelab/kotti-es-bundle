@@ -1,6 +1,14 @@
 History
 =======
 
+
+0.2.0 (2015-05-19)
+------------------
+
+- 605cf1c updates doc [Ruben Barilani]
+- 1867fc7 adds query string util service [Ruben Barilani]
+
+
 0.1.2 (2015-05-05)
 ------------------
 
