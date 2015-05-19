@@ -37,5 +37,10 @@
             <tag name="monolog.logger" channel="kotti.es" />
         </service>
 
+        <service id="truelab_kotti_es.util.query_string"
+                 class="Truelab\KottiEsBundle\Util\QueryStringUtil">
+           <argument>%truelab_kotti_es.util.query_string_default_options%</argument>
+        </service>
+
     </services>
 </container>
