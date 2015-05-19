@@ -2,6 +2,12 @@ History
 =======
 
 
+0.2.1 (2015-05-19)
+------------------
+
+- 2cdcacd drop query_string_util config [Ruben Barilani]
+
+
 0.2.0 (2015-05-19)
 ------------------
 
