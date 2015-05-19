@@ -18,6 +18,10 @@ class QueryStringUtil implements QueryStringUtilInterface
     public function __construct(array $options = [])
     {
         $this->options = array_merge($this->options, $options);
+
+        $this->options['clean_query_text_pattern'] = '/' . trim($this->options['clean_query_text_pattern'], '/') . '/';
+        $this->options['escape_query_text_pattern'] = '/' . trim($this->options['escape_query_text_pattern'], '/') . '/';
+
     }
 
     public function clean($text)

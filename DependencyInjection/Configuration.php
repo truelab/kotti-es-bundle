@@ -36,14 +36,6 @@ class Configuration implements ConfigurationInterface
                     ->useAttributeAsKey('name')
                     ->prototype('scalar')->end()
                 ->end()
-                ->arrayNode('query_string_util')
-                    ->addDefaultsIfNotSet()
-                    ->children()
-                        ->scalarNode('clean_query_text_pattern')->defaultValue('/([\"\<\>\^\?\*\~\.\!\(\)\+\-\=\:\{\}\/\\\])|(\|{2})|(&{2})/')->end()
-                        ->scalarNode('escape_query_text_pattern')->defaultValue('/([\"\<\>\^\?\*\~\.\!\(\)\+\-\=\:\{\}\/\\\])|(\|{2})|(&{2})/')->end()
-                        ->scalarNode('escape_query_text_replacement')->defaultValue('\\\\${1}${2}${3}')->end()
-                    ->end()
-                ->end()
             ->end();
 
         return $treeBuilder;

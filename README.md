@@ -66,8 +66,4 @@ truelab_kotti_es:
     alias_map: # required
         Document: document 
         # ...
-    query_string_util: # defaults
-        clean_query_text_pattern: '/([\"\<\>\^\?\*\~\.\!\(\)\+\-\=\:\{\}\/\\\])|(\|{2})|(&{2})/'
-        escape_query_text_pattern: '/([\"\<\>\^\?\*\~\.\!\(\)\+\-\=\:\{\}\/\\\])|(\|{2})|(&{2})/'
-        escape_query_text_replacement: '\\\\${1}${2}${3}'
 ```
