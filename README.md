@@ -27,6 +27,7 @@ Add this to yours ```composer.json```.
 Activate the bundle and dependent bundles to yours ```AppKernel.php```.
 
 ```php
+
 <?php
 # app/AppKernel.php
 
@@ -52,4 +53,21 @@ class AppKernel extends Kernel
     
     // ...
 }
+```
+
+## Configuration reference
+
+```yml
+
+truelab_kotti_es:
+    host: localhost # default
+    port: 9200 # default
+    index: your_index_name # required
+    alias_map: # required
+        Document: document 
+        # ...
+    query_string_util: # defaults
+        clean_query_text_pattern: '/([\"\<\>\^\?\*\~\.\!\(\)\+\-\=\:\{\}\/\\\])|(\|{2})|(&{2})/'
+        escape_query_text_pattern: '/([\"\<\>\^\?\*\~\.\!\(\)\+\-\=\:\{\}\/\\\])|(\|{2})|(&{2})/'
+        escape_query_text_replacement: '\\\\${1}${2}${3}'
 ```
